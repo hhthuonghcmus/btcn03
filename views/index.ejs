@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <selection class="header">
+        <div class="container">
+            <div class="row align-self-sm-start">
+                <h2>Bé tập tính</h2>
+            </div>
+            <form id="form-post" action="/calc" method="POST">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-12 align-self-sm-end">
+                        <label>Số thứ nhất</label>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12  align-self-sm-end">
+                        <input class="col-md-11" type="text" name="firstNumber" id="firstNumber" onfocusout="LeaveFirstNumber()" value="<%= num1 %>">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12  align-self-sm-end">
+                        <input type="radio" id="plus" name="calculation" value="1" <%=operator==1 ? 'checked' : '' %>>
+                        <label>Cộng</label>
+                        <input type="radio" id="minus" name="calculation" value="2" <%=operator==2 ? 'checked' : '' %>>
+                        <label>Trừ</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-12 align-self-sm-end">
+                        <label>Số thứ hai</label>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12  align-self-sm-end">
+                        <input class="col-md-11" type="text" name="secondNumber" id="secondNumber" onfocusout="LeaveSecondNumber()" value="<%= num2 %>">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12  align-self-sm-end">
+                        <input type="radio" id="multiply" name="calculation" value="3" <%=operator==3 ? 'checked' : '' %>>
+                        <label>Nhân</label>
+                        <input type="radio" id="divide" name="calculation" value="4" <%=operator==4 ? 'checked' : '' %>>
+                        <label>Chia</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-12 align-self-sm-end">
+                        <label>Kết quả</label>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12  align-self-sm-end">
+                        <input class="col-md-11" type="text" id="result" value="<%= result %>">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12  align-self-sm-end">
+                        <button type="submit">Tính</button>
+                    </div>
+                </div>
+            </form>
+            <div class="row row1">
+                <div class="col-lg-1 col-md-1 col-sm-12 align-self-sm-start ">
+                    <div class="warningField">
+                        <label>Thông báo</label>
+                    </div>
+                </div>
+                <p id="warning"></p>
+            </div>
+        </div>
+    </selection>
+    <script type="text/javascript" src="js/check.js"></script>
+</body>
+
+</html>
